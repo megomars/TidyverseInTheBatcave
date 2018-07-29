@@ -1,11 +1,14 @@
-# Tidyverse in the Batcave
+---
+title: "Tidyverse in the Batcave"
+output: html_notebook
+---
 
 The tidyverse is a coherent system of packages for data manipulation, exploration and visualization that share a common design philosophy. Fundamentally, the tidyverse is about the connections between the tools that make the workflow possible.
 
-```R
+```{r}
 install.packages("tidyverse") #How to install the tidyverse package
 ```
-Core tidyverse consists of
+## Core tidyverse consists of
 1. ggplot2 - plotting library
 2. dplyr - data manipulation
 3. tidyr - data cleaning
@@ -23,3 +26,4 @@ Core tidyverse consists of
 ## Grouping and summarizing
 
 ## Types of visualizations
+
