@@ -20,7 +20,8 @@ install.packages("tidyverse") #How to install the tidyverse package
 8. forcats - factors
 
 ![The Tidyverse](tidyverse1.png)
-## Data wrangling
+## 1. Data wrangling
+Data wrangling consists of Filtering, Arranging and Mutating
 
 ```{r}
 install.packages("gapminder")
@@ -74,9 +75,9 @@ gapminder %>%
   mutate(gdp = gdpPercap*pop)
 ```
 
-## Data visualization
+## 2. Data visualization
 
-## Grouping and summarizing
+## 3. Grouping and summarizing
 
-## Types of visualizations
+## 4. Types of visualizations
 
