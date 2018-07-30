@@ -22,6 +22,58 @@ install.packages("tidyverse") #How to install the tidyverse package
 ![The Tidyverse](tidyverse1.png)
 ## Data wrangling
 
+```{r}
+install.packages("gapminder")
+install.packages("dplyr")
+library(gapminder)
+library(dplyr)
+summary(gapminder$continent)
+```
+### Filtering
+Look for a subset based on a certain condition. The old way of doing this is to use the *subset* base R command. The new way is to use *filter* and the pipes command. Multiple conditions are separated by a comma.
+```{r}
+#old way
+Afghan1 <- subset(gapminder, country=="Afghanistan")
+#Dplyr filter way
+Afghan2 <- gapminder %>% filter(country == "Afghanistan")
+#Dplyr multiple variables
+Afghan2007 <- gapminder %>% filter(country =="Afghanistan", year==2007)
+Afghan1 == Afghan2 #True
+Afghan2007
+```
+
+### Arranging
+Sort your dataset with arrange. The old way of doing this is to use the *sort* base R command. The new way is to use *arrange*.
+```{r}
+#old way
+sort(gapminder$gdpPercap, decreasing = FALSE) #ascending order
+
+#Dplyr arrange way
+gapminder %>%
+  arrange(gdpPercap) #ascending
+
+gapminder %>%
+  arrange(desc(gdpPercap)) #descending
+
+
+#Combine filter and arrange
+BestGDP2007 <- gapminder %>%
+                    filter(year == 2007) %>%
+                      arrange(desc(gdpPercap))
+BestGDP2007
+```
+
+### Mutating
+```{r}
+#modify a variable
+gapminder %>%
+  mutate(pop = pop/100000) #mutate(whatsbeingreplaced = whatsbeingcalculated)
+
+#add a column
+gapminder %>%
+  mutate(gdp = gdpPercap*pop)
+```
+
 ## Data visualization
 
 ## Grouping and summarizing
