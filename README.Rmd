@@ -20,7 +20,9 @@ install.packages("tidyverse") #How to install the tidyverse package
 8. forcats - factors
 
 ![The Tidyverse](tidyverse1.png)
+
 ## 1. Data wrangling
+
 Data wrangling consists of Filtering, Arranging and Mutating
 
 ```{r}
@@ -65,6 +67,7 @@ BestGDP2007
 ```
 
 ### Mutating
+Mutating modifies or adds to existing columns.
 ```{r}
 #modify a variable
 gapminder %>%
@@ -74,8 +77,10 @@ gapminder %>%
 gapminder %>%
   mutate(gdp = gdpPercap*pop)
 ```
+---
+## 2. Data visualisation
 
-## 2. Data visualization
+Visualising data is done with ggplot2.
 ```{r}
 library(ggplot2)
 gapminder_1952 <- gapminder %>% filter(year == 1952)
