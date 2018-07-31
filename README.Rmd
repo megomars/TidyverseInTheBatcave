@@ -76,8 +76,36 @@ gapminder %>%
 ```
 
 ## 2. Data visualization
+```{r}
+library(ggplot2)
+gapminder_1952 <- gapminder %>% filter(year == 1952)
+
+#old way of plotting
+plot(gapminder_1952$gdpPercap,gapminder_1952$lifeExp)
+
+#Using the three base layers - data, aesthetics and geometries
+ggplot(gapminder_1952, aes(x = gdpPercap, y = lifeExp)) +
+  geom_point()
+
+#apply a log transformation and color
+ggplot(gapminder_1952, aes(x = gdpPercap, y = lifeExp, color=continent, size=pop)) +
+  geom_point()+scale_x_log10()
+
+#adding a facet
+ggplot(gapminder_1952, aes(x = gdpPercap, y = lifeExp, color=continent, size=pop)) + geom_point()+scale_x_log10()+facet_wrap(~ continent)
+
+```
 
 ## 3. Grouping and summarizing
+
+```{r}
+#return the mean of all life expectancies as one value
+gapminder %>%
+  summarize(meanLifeExp = mean(lifeExp))
+
+#return a filtered list of two summarized values
+gapminder %>% filter(year == 1957) %>% summarize(medianLifeExp = median(lifeExp), maxGdpPercap = max(gdpPercap))
+```
 
 ## 4. Types of visualizations
 
