@@ -81,6 +81,7 @@ gapminder %>%
 ## 2. Data visualisation
 
 Visualising data is done with ggplot2.
+![The values for each layer](values.png)
 ```{r}
 library(ggplot2)
 gapminder_1952 <- gapminder %>% filter(year == 1952)
@@ -101,7 +102,10 @@ ggplot(gapminder_1952, aes(x = gdpPercap, y = lifeExp, color=continent, size=pop
 
 ```
 
-## 3. Grouping and summarizing
+## 3. Summarizing and grouping
+
+The data transformation and visualization process:
+![Data analysis process](process.png)
 
 ```{r}
 #return the mean of all life expectancies as one value
@@ -110,6 +114,22 @@ gapminder %>%
 
 #return a filtered list of two summarized values
 gapminder %>% filter(year == 1957) %>% summarize(medianLifeExp = median(lifeExp), maxGdpPercap = max(gdpPercap))
+
+#return a grouped list
+gapminder %>% group_by(year) %>% summarize(meanLifeExp = mean(lifeExp), totalPop = sum(pop))
+
+#group by year and continent
+gapminder %>%
+    group_by(year, continent) %>%
+      summarize(meanLifeExp = mean(lifeExp), totalPop = sum(pop))
+
+# Summarize medianGdpPercap within each continent within each year: by_year_continent
+by_year_continent <- gapminder %>%
+  group_by(continent,year) %>%
+    summarize(medianGdpPercap = median(gdpPercap))
+
+# Plot the change in medianGdpPercap in each continent over time add a zero start y axis
+ggplot(by_year_continent, aes(x=year, y=medianGdpPercap, color=continent))+geom_point()+expand_limits(y=0)
 ```
 
 ## 4. Types of visualizations
