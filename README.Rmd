@@ -134,3 +134,18 @@ ggplot(by_year_continent, aes(x=year, y=medianGdpPercap, color=continent))+geom_
 
 ## 4. Types of visualizations
 
+```{r}
+# Line plots
+ggplot(gapminder_2007, aes(x=year, y=lifeExp))+geom_line()
+
+# Bar plots
+ggplot(gapminder_2007, aes(x=year, y=lifeExp))+geom_col()
+
+# Histograms - have one aesthetic
+ggplot(gapminder_2007, aes(x=lifeExp))+geom_histogram(binwidth = 5)
+
+# Boxplots
+ggplot(gapminder_2007, aes(x=year, y=lifeExp))+geom_boxplot()
+
+
+```
