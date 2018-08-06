@@ -11,9 +11,9 @@ install.packages("tidyverse") #How to install the tidyverse package
 library("tidyverse")
 ```
 ## Core tidyverse consists of
-1. ggplot2 - plotting library
-2. dplyr - data manipulation
-3. tidyr - data cleaning
+1. **ggplot2 - plotting library**
+2. **dplyr - data manipulation**
+3. **tidyr - data cleaning**
 4. readr - data ingest
 5. purrr - tools for functions and vectors
 6. tibble - reimagined data.frames
@@ -22,9 +22,9 @@ library("tidyverse")
 
 ![The Tidyverse](tidyverse1.png)
 
-## 1. Data wrangling
+# 1. Data wrangling with DPLYR
 
-Data wrangling consists of Filtering, Arranging and Mutating
+Data wrangling consists of Selecting, Filtering, Arranging and Mutating
 
 ```{r}
 install.packages("gapminder")
@@ -78,32 +78,8 @@ gapminder %>%
 gapminder %>%
   mutate(gdp = gdpPercap*pop)
 ```
----
-## 2. Data visualisation
 
-Visualising data is done with ggplot2.
-![The values for each layer](values.png)
-```{r}
-library(ggplot2)
-gapminder_1952 <- gapminder %>% filter(year == 1952)
-
-#old way of plotting
-plot(gapminder_1952$gdpPercap,gapminder_1952$lifeExp)
-
-#Using the three base layers - data, aesthetics and geometries
-ggplot(gapminder_1952, aes(x = gdpPercap, y = lifeExp)) +
-  geom_point()
-
-#apply a log transformation and color
-ggplot(gapminder_1952, aes(x = gdpPercap, y = lifeExp, color=continent, size=pop)) +
-  geom_point()+scale_x_log10()
-
-#adding a facet
-ggplot(gapminder_1952, aes(x = gdpPercap, y = lifeExp, color=continent, size=pop)) + geom_point()+scale_x_log10()+facet_wrap(~ continent)
-
-```
-
-## 3. Summarizing and grouping
+### Summarizing and grouping
 
 The data transformation and visualization process:
 ![Data analysis process](process.png)
@@ -133,7 +109,33 @@ by_year_continent <- gapminder %>%
 ggplot(by_year_continent, aes(x=year, y=medianGdpPercap, color=continent))+geom_point()+expand_limits(y=0)
 ```
 
-## 4. Types of visualizations
+---
+
+# 3. Data visualisation with GGPLOT2
+
+Visualising data is done with ggplot2.
+![The values for each layer](values.png)
+```{r}
+library(ggplot2)
+gapminder_1952 <- gapminder %>% filter(year == 1952)
+
+#old way of plotting
+plot(gapminder_1952$gdpPercap,gapminder_1952$lifeExp)
+
+#Using the three base layers - data, aesthetics and geometries
+ggplot(gapminder_1952, aes(x = gdpPercap, y = lifeExp)) +
+  geom_point()
+
+#apply a log transformation and color
+ggplot(gapminder_1952, aes(x = gdpPercap, y = lifeExp, color=continent, size=pop)) +
+  geom_point()+scale_x_log10()
+
+#adding a facet
+ggplot(gapminder_1952, aes(x = gdpPercap, y = lifeExp, color=continent, size=pop)) + geom_point()+scale_x_log10()+facet_wrap(~ continent)
+
+```
+
+### Popular types of data visualisation
 
 ```{r}
 # Line plots
@@ -150,3 +152,7 @@ ggplot(gapminder_2007, aes(x=year, y=lifeExp))+geom_boxplot()
 
 
 ```
+
+# 3. Cleaning and joining data with Tidyr
+
+
