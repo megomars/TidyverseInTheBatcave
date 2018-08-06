@@ -181,20 +181,10 @@ $(document).ready(function () {
 <p>The tidyverse is a coherent system of packages for data manipulation, exploration and visualization that share a common design philosophy. Fundamentally, the tidyverse is about the connections between the tools that make the workflow possible.</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShcInRpZHl2ZXJzZVwiKVxuXG5gYGAifQ== -->
-<pre class="r"><code>library(&quot;tidyverse&quot;)
-</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaW5zdGFsbC5wYWNrYWdlcyhcInRpZHl2ZXJzZVwiKSAjSG93IHRvIGluc3RhbGwgdGhlIHRpZHl2ZXJzZSBwYWNrYWdlXG5saWJyYXJ5KFwidGlkeXZlcnNlXCIpXG5gYGAifQ== -->
+<pre class="r"><code>install.packages(&quot;tidyverse&quot;) #How to install the tidyverse package
+library(&quot;tidyverse&quot;)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiXHUwMDFiWzMwbS0tIFx1MDAxYlsxbUF0dGFjaGluZyBwYWNrYWdlc1x1MDAxYlsyMm0gLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLSB0aWR5dmVyc2UgMS4yLjEgLS1cdTAwMWJbMzltXG5cdTAwMWJbMzBtXHUwMDFiWzMybTxVKzIyMUE+XHUwMDFiWzMwbSBcdTAwMWJbMzRtZ2dwbG90Mlx1MDAxYlszMG0gMy4wLjAgICAgIFx1MDAxYlszMm08VSsyMjFBPlx1MDAxYlszMG0gXHUwMDFiWzM0bXB1cnJyICBcdTAwMWJbMzBtIDAuMi41XG5cdTAwMWJbMzJtPFUrMjIxQT5cdTAwMWJbMzBtIFx1MDAxYlszNG10aWJibGUgXHUwMDFiWzMwbSAxLjQuMiAgICAgXHUwMDFiWzMybTxVKzIyMUE+XHUwMDFiWzMwbSBcdTAwMWJbMzRtZHBseXIgIFx1MDAxYlszMG0gMC43LjRcblx1MDAxYlszMm08VSsyMjFBPlx1MDAxYlszMG0gXHUwMDFiWzM0bXRpZHlyICBcdTAwMWJbMzBtIDAuOC4xICAgICBcdTAwMWJbMzJtPFUrMjIxQT5cdTAwMWJbMzBtIFx1MDAxYlszNG1zdHJpbmdyXHUwMDFiWzMwbSAxLjMuMVxuXHUwMDFiWzMybTxVKzIyMUE+XHUwMDFiWzMwbSBcdTAwMWJbMzRtcmVhZHIgIFx1MDAxYlszMG0gMS4xLjEgICAgIFx1MDAxYlszMm08VSsyMjFBPlx1MDAxYlszMG0gXHUwMDFiWzM0bWZvcmNhdHNcdTAwMWJbMzBtIDAuMy4wXHUwMDFiWzM5bVxuXHUwMDFiWzMwbS0tIFx1MDAxYlsxbUNvbmZsaWN0c1x1MDAxYlsyMm0gLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLSB0aWR5dmVyc2VfY29uZmxpY3RzKCkgLS1cblx1MDAxYlszMW14XHUwMDFiWzMwbSBcdTAwMWJbMzRtZHBseXJcdTAwMWJbMzBtOjpcdTAwMWJbMzJtZmlsdGVyKClcdTAwMWJbMzBtIG1hc2tzIFx1MDAxYlszNG1zdGF0c1x1MDAxYlszMG06OmZpbHRlcigpXG5cdTAwMWJbMzFteFx1MDAxYlszMG0gXHUwMDFiWzM0bWRwbHlyXHUwMDFiWzMwbTo6XHUwMDFiWzMybWxhZygpXHUwMDFiWzMwbSAgICBtYXNrcyBcdTAwMWJbMzRtc3RhdHNcdTAwMWJbMzBtOjpsYWcoKVx1MDAxYlszOW1cbiJ9 -->
-<pre><code>[30m-- [1mAttaching packages[22m ---------------------------------------------------------------- tidyverse 1.2.1 --[39m
-[30m[32m&lt;U+221A&gt;[30m [34mggplot2[30m 3.0.0     [32m&lt;U+221A&gt;[30m [34mpurrr  [30m 0.2.5
-[32m&lt;U+221A&gt;[30m [34mtibble [30m 1.4.2     [32m&lt;U+221A&gt;[30m [34mdplyr  [30m 0.7.4
-[32m&lt;U+221A&gt;[30m [34mtidyr  [30m 0.8.1     [32m&lt;U+221A&gt;[30m [34mstringr[30m 1.3.1
-[32m&lt;U+221A&gt;[30m [34mreadr  [30m 1.1.1     [32m&lt;U+221A&gt;[30m [34mforcats[30m 0.3.0[39m
-[30m-- [1mConflicts[22m ------------------------------------------------------------------- tidyverse_conflicts() --
-[31mx[30m [34mdplyr[30m::[32mfilter()[30m masks [34mstats[30m::filter()
-[31mx[30m [34mdplyr[30m::[32mlag()[30m    masks [34mstats[30m::lag()[39m</code></pre>
-<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <div id="core-tidyverse-consists-of" class="section level2">
@@ -219,18 +209,13 @@ $(document).ready(function () {
 <p>Data wrangling consists of Filtering, Arranging and Mutating</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShsdWJyaWRhdGUpXG5cbmBgYCJ9 -->
-<pre class="r"><code>library(lubridate)
-</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaW5zdGFsbC5wYWNrYWdlcyhcImdhcG1pbmRlclwiKVxuaW5zdGFsbC5wYWNrYWdlcyhcImRwbHlyXCIpXG5saWJyYXJ5KGdhcG1pbmRlcilcbmxpYnJhcnkoZHBseXIpXG5zdW1tYXJ5KGdhcG1pbmRlciRjb250aW5lbnQpXG5gYGAifQ== -->
+<pre class="r"><code>install.packages(&quot;gapminder&quot;)
+install.packages(&quot;dplyr&quot;)
+library(gapminder)
+library(dplyr)
+summary(gapminder$continent)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiXG5BdHRhY2hpbmcgcGFja2FnZTogJ2x1YnJpZGF0ZSdcblxuVGhlIGZvbGxvd2luZyBvYmplY3QgaXMgbWFza2VkIGZyb20gJ3BhY2thZ2U6YmFzZSc6XG5cbiAgICBkYXRlXG4ifQ== -->
-<pre><code>
-Attaching package: 'lubridate'
-
-The following object is masked from 'package:base':
-
-    date</code></pre>
-<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <div id="filtering" class="section level3">
