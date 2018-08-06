@@ -8,6 +8,7 @@ The tidyverse is a coherent system of packages for data manipulation, exploratio
 
 ```{r}
 install.packages("tidyverse") #How to install the tidyverse package
+library("tidyverse")
 ```
 ## Core tidyverse consists of
 1. ggplot2 - plotting library
