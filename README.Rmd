@@ -24,7 +24,7 @@ library("tidyverse")
 
 # 1. Data wrangling with DPLYR
 
-Data wrangling consists of Selecting, Filtering, Arranging and Mutating
+Data wrangling consists of Filtering, Arranging, Mutating, Summarizing and Grouping.
 
 ```{r}
 install.packages("gapminder")
