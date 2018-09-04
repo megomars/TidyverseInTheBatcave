@@ -44,6 +44,7 @@ Afghan2 <- gapminder %>% filter(country == "Afghanistan")
 Afghan2007 <- gapminder %>% filter(country =="Afghanistan", year==2007)
 Afghan1 == Afghan2 #True
 Afghan2007
+SpecificCountries <- gapminder %>% filter(country %in% c("Afghanistan, Russia, China"))
 ```
 
 ### Arranging
