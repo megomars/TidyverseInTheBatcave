@@ -21,10 +21,20 @@ library("tidyverse")
 8. forcats - factors
 
 ![The Tidyverse](tidyverse1.png)
+# 0. Data cleaning with TIDYR
+A tidy dataset is where each variable is saved in its own column and each observation is saved in its each row.
+
+Reshaping a dataset is basically changing the layout of a data set. There are four verbs for that.
+```{r}
+gather()
+separate()
+spread()
+unite()
+```
 
 # 1. Data wrangling with DPLYR
-
-Data wrangling consists of Filtering, Arranging, Mutating, Summarizing and Grouping.
+#F-SAMS-GB-DSSTCUTMe
+Data wrangling primarily consists of Selecting, Filtering, Arranging, Mutating, Summarizing and Grouping.
 
 ```{r}
 install.packages("gapminder")
@@ -33,6 +43,7 @@ library(gapminder)
 library(dplyr)
 summary(gapminder$continent)
 ```
+
 ### Filtering
 Look for a subset based on a certain condition. The old way of doing this is to use the *subset* base R command. The new way is to use *filter* and the pipes command. Multiple conditions are separated by a comma.
 ```{r}
